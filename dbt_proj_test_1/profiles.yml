@@ -1,0 +1,9 @@
+dbt_proj_test_1:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: RAUNIT_T20_DBT
+      schema: T20_DATA_TRANSFORM
