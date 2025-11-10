@@ -1,6 +1,7 @@
-{{ 
+{{
     config(
-        materialized='table'
+        materialized='table',
+        post_hook="ALTER TABLE {{ this }} ADD CONSTRAINT PK_PLAYER PRIMARY KEY (PLAYERID)"
     )
 }}
 
@@ -11,7 +12,5 @@ WITH source_data AS (
     FROM {{ source('t20_database', 'players') }}
 )
 
-
 SELECT *
 FROM source_data
-
