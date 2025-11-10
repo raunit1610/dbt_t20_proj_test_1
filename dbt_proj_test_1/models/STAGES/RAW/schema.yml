@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: stg_raw_player
+  - name: STG_RAW_PLAYER
     description: ""
     columns:
       - name: playerid
@@ -14,6 +14,8 @@ models:
       - name: filename
         data_type: varchar
         description: ""
+        tests:
+          - unique
       - name: load_timestamp
         data_type: timestamp_ntz
         description: ""
