@@ -19,5 +19,14 @@ sources:
   - name: seed_data
     database: RAUNIT_T20_DBT
     schema: T20_DATA_TRANSFORM
+    tables:
+      - name: balltype
+        identifier: BallType_9_11_25
+      - name: dismissalType
+        identifier: DismissalType_9_11_25
+      - name: scoringtype
+        identifier: ScoringType_9_11_25
+      - name: playerr
+        identifier: Player_9_11_25
     
       
