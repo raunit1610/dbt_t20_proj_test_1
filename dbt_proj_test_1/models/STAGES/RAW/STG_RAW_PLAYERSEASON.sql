@@ -9,6 +9,7 @@
 WITH source_data AS (
     SELECT
         {{ dbt_utils.star(from=source('t20_database', 'playerseason')) }},
+        {{ dbt_utils.generate_surrogate_key(['PLAYERID', 'TEAMID']) }} AS PLAYER_SEASON_TEAM_KEY,
         CONVERT_TIMEZONE('UTC', CURRENT_TIMESTAMP())::TIMESTAMP_NTZ AS _inserted_at_
     FROM {{ source('t20_database', 'playerseason') }}
 ),
