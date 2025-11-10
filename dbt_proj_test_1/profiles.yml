@@ -10,16 +10,6 @@ dbt_proj_test_1:
       warehouse: COMPUTE_WH
       database: RAUNIT_T20_DBT
       schema: T20_DATA_TRANSFORM
-
-    staging:
-      type: snowflake
-      account: 'Not Needed'
-      user: 'Not Needed'
-      password: 'Not Needed'
-      role: ACCOUNTADMIN
-      warehouse: COMPUTE_WH
-      database: RAUNIT_T20_DBT
-      schema: T20_DATA_TRANSFORM
       
     prod:
       type: snowflake
@@ -29,4 +19,4 @@ dbt_proj_test_1:
       role: ACCOUNTADMIN
       warehouse: COMPUTE_WH
       database: RAUNIT_T20_DBT
-      schema: T20_DATA_TRANSFORM
+      schema: T20_DATA_TRANSFORM_PROD
