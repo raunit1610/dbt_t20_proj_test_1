@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: t20_database
+    database: RAUNIT_T20_DBT
+    schema: T20_RAW
+    tables:
+      - name: players
+        identifier: PLAYER
+      - name: teams
+        identifier: TEAM
+      - name: battingcard
+        identifier: BATTINGSCORECARD
+      - name: bowlingcard
+        identifier: BOWLINGSCORECARD
+      - name: dismissal
+        identifier: DISMISSALTYPE
+
+  - name: seed_data
+    database: RAUNIT_T20_DBT
+    schema: T20_DATA_TRANSFORM
+    tables: 
+      - name: playerseason
+        identifier: PLAYERSEASON
+      
