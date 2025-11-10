@@ -13,13 +13,11 @@ sources:
         identifier: BATTINGSCORECARD
       - name: bowlingcard
         identifier: BOWLINGSCORECARD
-      - name: dismissal
-        identifier: DISMISSALTYPE
+      - name: playerseason
+        identifier: PLAYERSEASON
 
   - name: seed_data
     database: RAUNIT_T20_DBT
     schema: T20_DATA_TRANSFORM
-    tables: 
-      - name: playerseason
-        identifier: PLAYERSEASON
+    
       
