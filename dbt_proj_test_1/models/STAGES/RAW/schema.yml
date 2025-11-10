@@ -9,6 +9,8 @@ models:
       - name: playername
         data_type: varchar
         description: ""
+        tests:
+          - not_null
       - name: filename
         data_type: varchar
         description: ""

@@ -1,10 +1,7 @@
 {{
     config(
-        materialized='table',
-        post_hook="ALTER TABLE {{ this }} ADD CONSTRAINT PK_PLAYER PRIMARY KEY (PLAYERID)"
         materialized='incremental',
-        unique_key='PLAYERID',
-        incremental_strategy='merge'
+        incremental_strategy='append'
     )
 }}
 
@@ -28,7 +25,3 @@ deduped AS (
 
 SELECT *
 FROM deduped
-
-{% if is_incremental() %}
-  WHERE _inserted_at_ > (SELECT MAX(_inserted_at_) FROM {{ this }})
-{% endif %}
