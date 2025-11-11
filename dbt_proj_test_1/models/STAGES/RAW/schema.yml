@@ -22,7 +22,7 @@ models:
       - name: _inserted_at_
         data_type: timestamp_ntz
         description: ""
-  - name: stg_raw_playerseason
+  - name: STG_RAW_PLAYERSEASON
     description: ""
     columns:
       - name: playerid
@@ -43,7 +43,7 @@ models:
       - name: _inserted_at_
         data_type: timestamp_ntz
         description: ""
-  - name: stg_raw_battingcard
+  - name: STG_RAW_BATTINGCARD
     description: ""
     columns:
       - name: matchid
@@ -91,7 +91,7 @@ models:
       - name: _inserted_at_
         data_type: timestamp_ntz
         description: ""
-  - name: stg_raw_bowlingcard
+  - name: STG_RAW_BOWLINGCARD
     description: ""
     columns:
       - name: matchid
@@ -139,7 +139,7 @@ models:
       - name: _inserted_at_
         data_type: timestamp_ntz
         description: ""
-  - name: stg_raw_team
+  - name: STG_RAW_TEAM
     description: ""
     columns:
       - name: teamid

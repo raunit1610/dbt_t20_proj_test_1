@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: stg_bronze_playerstats
+  - name: STG_BRONZE_PLAYERSTATS
     description: ""
     columns:
       - name: season
