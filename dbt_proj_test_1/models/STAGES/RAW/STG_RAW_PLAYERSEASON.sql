@@ -9,22 +9,22 @@
 WITH source_data AS (
     SELECT
         {{ dbt_utils.star(from=source('t20_database', 'playerseason')) }},
-        {{ dbt_utils.generate_surrogate_key(['PLAYERID', 'TEAMID']) }} AS PLAYER_SEASON_TEAM_KEY,
+        NULL AS abc,
         CONVERT_TIMEZONE('UTC', CURRENT_TIMESTAMP())::TIMESTAMP_NTZ AS _inserted_at_
     FROM {{ source('t20_database', 'playerseason') }}
 ),
 
 deduped AS (
     SELECT
-        PLAYER_SEASON_TEAM_KEY,
         PLAYERID,
         TEAMID,
+        ANY_VALUE(abc),
         ANY_VALUE(SEASON) AS SEASON,
         ANY_VALUE(FILENAME) AS FILENAME,
         ANY_VALUE(LOAD_TIMESTAMP) AS LOAD_TIMESTAMP,
         MAX(_inserted_at_) AS _inserted_at_
     FROM source_data
-    GROUP BY PLAYERID, TEAMID, PLAYER_SEASON_TEAM_KEY
+    GROUP BY PLAYERID, TEAMID
 )
 
 SELECT *
