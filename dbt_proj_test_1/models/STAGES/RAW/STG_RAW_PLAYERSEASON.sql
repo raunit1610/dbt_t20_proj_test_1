@@ -16,6 +16,7 @@ WITH source_data AS (
 
 deduped AS (
     SELECT
+        PLAYER_SEASON_TEAM_KEY,
         PLAYERID,
         TEAMID,
         ANY_VALUE(SEASON) AS SEASON,
@@ -23,7 +24,7 @@ deduped AS (
         ANY_VALUE(LOAD_TIMESTAMP) AS LOAD_TIMESTAMP,
         MAX(_inserted_at_) AS _inserted_at_
     FROM source_data
-    GROUP BY PLAYERID, TEAMID
+    GROUP BY PLAYERID, TEAMID, PLAYER_SEASON_TEAM_KEY
 )
 
 SELECT *
